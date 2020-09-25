@@ -1,0 +1,24 @@
+#books-rating-service
+
+This API will provide the list of books user has rated .
+Returns a successful response if userId is present else will throw bad request with a message ' userId does not exist'.
+
+The project has below modules
+
+main - This is the main class which starts our springboot application .
+
+controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. 
+This class returns the ratings response for a given userId present in DB. This has been implemented by storing the data in a collection,
+Map<String, List<rating>> which has userId has key and list of ratings as values. So, for a given key, we stream through the entry set of map and filter
+with the matching key for input and return the values corresponding to that key. 
+
+service - The service class has the data level implementation and returns response to controller class if userId is present 
+else will through UserIdNotFoundException with BAD_REQUEST status.
+
+model - This is the POJO class which holds the properties of the java objects returned in the response.
+
+configuration - This has configuration related to swagger, to provide the API contract details in web (swagger-ui.html) and in doc. the docket bean is defined in 
+this class and all the methods in the controller class with /ratings uri will be provided with the contract details. 
+
+
+exception - This has the global exception handler class so that the exceptions can be handled through out the application.  
