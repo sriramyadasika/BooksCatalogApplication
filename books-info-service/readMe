@@ -1,0 +1,24 @@
+#books-info-service
+
+This API will provide the Books information .
+Returns a successful response if bookId is present else will throw bad request with a message ' BookId does not exist'.
+
+The project has below modules
+
+main - This is the main class which starts our springboot application .
+
+controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. This API has two rest end 
+points, 
+one which provides the information of all the books present in DB. This has been implemented by using spring JPA module. The books information 
+is stored in the h2 database and the data is provided in the main class so that the data gets populated during start up of teh service.
+
+service - The service class calls the crudRepository to get teh books information using findAll and findById methods of JPA. will return the 
+data if the id is present else will through bookInfoNotFoundException.
+
+model - This is the POJO class which holds the properties of the java objects returned in the response.
+
+configuration - This has configuration related to swagger, to provide the API contract details in web (swagger-ui.html) and in doc. the docket bean is defined in 
+this class and all the methods in the controller class with /books uri will be provided with the contract details. 
+
+
+exception - This has the global exception handler class so that the exceptions can be handled through out the application.  
