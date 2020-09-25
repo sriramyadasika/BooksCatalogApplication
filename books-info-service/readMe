@@ -7,10 +7,9 @@ The project has below modules
 
 main - This is the main class which starts our springboot application .
 
-controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. This API has two rest end 
-points, 
-one which provides the information of all the books present in DB. This has been implemented by using spring JPA module. The books information 
-is stored in the h2 database and the data is provided in the main class so that the data gets populated during start up of teh service.
+controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. This
+class  provides the information of all the books present in DB. This has been implemented by using spring JPA module. The books information 
+is stored in the h2 database and the data is provided in the main class so that the data gets populated during start up of the service.
 
 service - The service class calls the crudRepository to get teh books information using findAll and findById methods of JPA. will return the 
 data if the id is present else will through bookInfoNotFoundException.
