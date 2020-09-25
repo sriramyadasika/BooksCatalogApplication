@@ -1,0 +1,24 @@
+#book-catalog-service
+
+This API will provide the Book Catalog details for a given user.
+Returns a successful response if the userId is present else will throw bad request with a message ' user does not exist'.
+
+The project has below modules
+
+main - This is the main class which starts our springboot application .
+
+controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. This API consumes two 
+services books-info-service(info) and books-rating-service(rating) to get the bookId, bookName and rating given by a user. For a given userId, first we call the 
+rating API which returns the list of rating object. Then we stream through the list and for each bookId in the rating object we get the corresponding booksInfo.
+
+service - The service class talks to other APIs using Rest Template and gets the required response. Incase if any of the two APIs are down, and after subsequent request failures 
+the hystrix circuit breaker opens and further calls will be routed to fallback method until service is up again.This is done using @hystrixCommand and just populated
+some default values in the response.
+
+model - This is the POJO class which holds the properties of the java objects returned in the response.
+
+configuration - This has configuration related to swagger, to provide the API contract details in web (swagger-ui.html) and in doc.
+
+exception - This has the global exception handler class so that the exceptions can be handled through out the application.
+
+
