@@ -5,7 +5,7 @@ Returns a successful response if bookId is present else will throw bad request w
 
 The project has below modules
 
-main - This is the main class which starts our springboot application .
+main - This is the main class which starts our springboot application . this application runs on port 8081 and defined under application.properties file.
 
 controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. This
 class  provides the information of all the books present in DB. This has been implemented by using spring JPA module. The books information 
