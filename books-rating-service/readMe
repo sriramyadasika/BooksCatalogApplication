@@ -5,7 +5,7 @@ Returns a successful response if userId is present else will throw bad request w
 
 The project has below modules
 
-main - This is the main class which starts our springboot application .
+main - This is the main class which starts our springboot application. This application runs on port 8082 and defined under application.properties file.
 
 controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. 
 This class returns the ratings response for a given userId present in DB. This has been implemented by storing the data in a collection,
