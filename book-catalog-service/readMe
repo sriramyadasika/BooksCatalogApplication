@@ -5,7 +5,7 @@ Returns a successful response if the userId is present else will throw bad reque
 
 The project has below modules
 
-main - This is the main class which starts our springboot application .
+main - This is the main class which starts our springboot application. This application is enabled on port 8083 and defined under application.properties file.
 
 controller - The controller class will receive the incoming requests and acts as a resource class in providing the response. This API consumes two 
 services books-info-service(info) and books-rating-service(rating) to get the bookId, bookName and rating given by a user. For a given userId, first we call the 
